@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49767B27216FD2930050AD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B26216FD2930050AD9A /* AppDelegate.swift */; };
+		49767B29216FD2930050AD9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B28216FD2930050AD9A /* ViewController.swift */; };
+		49767B2B216FD2940050AD9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49767B2A216FD2940050AD9A /* Assets.xcassets */; };
+		49767B2E216FD2940050AD9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49767B2C216FD2940050AD9A /* Main.storyboard */; };
+		49767B3A216FD2940050AD9A /* TorrentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B39216FD2940050AD9A /* TorrentialTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49767B36216FD2940050AD9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49767B1B216FD2930050AD9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49767B22216FD2930050AD9A;
+			remoteInfo = Torrential;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49767B23216FD2930050AD9A /* Torrential.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Torrential.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49767B26216FD2930050AD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49767B28216FD2930050AD9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49767B2A216FD2940050AD9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49767B2D216FD2940050AD9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49767B2F216FD2940050AD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49767B30216FD2940050AD9A /* Torrential.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Torrential.entitlements; sourceTree = "<group>"; };
+		49767B35216FD2940050AD9A /* TorrentialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TorrentialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49767B39216FD2940050AD9A /* TorrentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentialTests.swift; sourceTree = "<group>"; };
+		49767B3B216FD2940050AD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49767B20216FD2930050AD9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49767B32216FD2940050AD9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49767B1A216FD2930050AD9A = {
+			isa = PBXGroup;
+			children = (
+				49767B25216FD2930050AD9A /* Torrential */,
+				49767B38216FD2940050AD9A /* TorrentialTests */,
+				49767B24216FD2930050AD9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49767B24216FD2930050AD9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49767B23216FD2930050AD9A /* Torrential.app */,
+				49767B35216FD2940050AD9A /* TorrentialTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49767B25216FD2930050AD9A /* Torrential */ = {
+			isa = PBXGroup;
+			children = (
+				49767B26216FD2930050AD9A /* AppDelegate.swift */,
+				49767B28216FD2930050AD9A /* ViewController.swift */,
+				49767B2A216FD2940050AD9A /* Assets.xcassets */,
+				49767B2C216FD2940050AD9A /* Main.storyboard */,
+				49767B2F216FD2940050AD9A /* Info.plist */,
+				49767B30216FD2940050AD9A /* Torrential.entitlements */,
+			);
+			path = Torrential;
+			sourceTree = "<group>";
+		};
+		49767B38216FD2940050AD9A /* TorrentialTests */ = {
+			isa = PBXGroup;
+			children = (
+				49767B39216FD2940050AD9A /* TorrentialTests.swift */,
+				49767B3B216FD2940050AD9A /* Info.plist */,
+			);
+			path = TorrentialTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49767B22216FD2930050AD9A /* Torrential */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49767B3E216FD2940050AD9A /* Build configuration list for PBXNativeTarget "Torrential" */;
+			buildPhases = (
+				49767B1F216FD2930050AD9A /* Sources */,
+				49767B20216FD2930050AD9A /* Frameworks */,
+				49767B21216FD2930050AD9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Torrential;
+			productName = Torrential;
+			productReference = 49767B23216FD2930050AD9A /* Torrential.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49767B34216FD2940050AD9A /* TorrentialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49767B41216FD2940050AD9A /* Build configuration list for PBXNativeTarget "TorrentialTests" */;
+			buildPhases = (
+				49767B31216FD2940050AD9A /* Sources */,
+				49767B32216FD2940050AD9A /* Frameworks */,
+				49767B33216FD2940050AD9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49767B37216FD2940050AD9A /* PBXTargetDependency */,
+			);
+			name = TorrentialTests;
+			productName = TorrentialTests;
+			productReference = 49767B35216FD2940050AD9A /* TorrentialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49767B1B216FD2930050AD9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = Mackarous;
+				TargetAttributes = {
+					49767B22216FD2930050AD9A = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					49767B34216FD2940050AD9A = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 49767B22216FD2930050AD9A;
+					};
+				};
+			};
+			buildConfigurationList = 49767B1E216FD2930050AD9A /* Build configuration list for PBXProject "Torrential" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49767B1A216FD2930050AD9A;
+			productRefGroup = 49767B24216FD2930050AD9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49767B22216FD2930050AD9A /* Torrential */,
+				49767B34216FD2940050AD9A /* TorrentialTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49767B21216FD2930050AD9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49767B2B216FD2940050AD9A /* Assets.xcassets in Resources */,
+				49767B2E216FD2940050AD9A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49767B33216FD2940050AD9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49767B1F216FD2930050AD9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49767B29216FD2930050AD9A /* ViewController.swift in Sources */,
+				49767B27216FD2930050AD9A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49767B31216FD2940050AD9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49767B3A216FD2940050AD9A /* TorrentialTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49767B37216FD2940050AD9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49767B22216FD2930050AD9A /* Torrential */;
+			targetProxy = 49767B36216FD2940050AD9A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49767B2C216FD2940050AD9A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49767B2D216FD2940050AD9A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49767B3C216FD2940050AD9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49767B3D216FD2940050AD9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		49767B3F216FD2940050AD9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Torrential/Torrential.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2AZD6AW5E9;
+				INFOPLIST_FILE = Torrential/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mackarous.Torrential;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		49767B40216FD2940050AD9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Torrential/Torrential.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2AZD6AW5E9;
+				INFOPLIST_FILE = Torrential/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mackarous.Torrential;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		49767B42216FD2940050AD9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2AZD6AW5E9;
+				INFOPLIST_FILE = TorrentialTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mackarous.TorrentialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Torrential.app/Contents/MacOS/Torrential";
+			};
+			name = Debug;
+		};
+		49767B43216FD2940050AD9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2AZD6AW5E9;
+				INFOPLIST_FILE = TorrentialTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mackarous.TorrentialTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Torrential.app/Contents/MacOS/Torrential";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49767B1E216FD2930050AD9A /* Build configuration list for PBXProject "Torrential" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49767B3C216FD2940050AD9A /* Debug */,
+				49767B3D216FD2940050AD9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49767B3E216FD2940050AD9A /* Build configuration list for PBXNativeTarget "Torrential" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49767B3F216FD2940050AD9A /* Debug */,
+				49767B40216FD2940050AD9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49767B41216FD2940050AD9A /* Build configuration list for PBXNativeTarget "TorrentialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49767B42216FD2940050AD9A /* Debug */,
+				49767B43216FD2940050AD9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49767B1B216FD2930050AD9A /* Project object */;
+}
