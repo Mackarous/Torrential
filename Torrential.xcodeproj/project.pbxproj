@@ -12,6 +12,7 @@
 		49767B2B216FD2940050AD9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49767B2A216FD2940050AD9A /* Assets.xcassets */; };
 		49767B2E216FD2940050AD9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49767B2C216FD2940050AD9A /* Main.storyboard */; };
 		49767B3A216FD2940050AD9A /* TorrentialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B39216FD2940050AD9A /* TorrentialTests.swift */; };
+		49767B45216FD2A60050AD9A /* Bencoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B44216FD2A60050AD9A /* Bencoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		49767B35216FD2940050AD9A /* TorrentialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TorrentialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49767B39216FD2940050AD9A /* TorrentialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentialTests.swift; sourceTree = "<group>"; };
 		49767B3B216FD2940050AD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49767B44216FD2A60050AD9A /* Bencoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bencoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				49767B26216FD2930050AD9A /* AppDelegate.swift */,
 				49767B28216FD2930050AD9A /* ViewController.swift */,
+				49767B44216FD2A60050AD9A /* Bencoder.swift */,
 				49767B2A216FD2940050AD9A /* Assets.xcassets */,
 				49767B2C216FD2940050AD9A /* Main.storyboard */,
 				49767B2F216FD2940050AD9A /* Info.plist */,
@@ -197,6 +200,7 @@
 			files = (
 				49767B29216FD2930050AD9A /* ViewController.swift in Sources */,
 				49767B27216FD2930050AD9A /* AppDelegate.swift in Sources */,
+				49767B45216FD2A60050AD9A /* Bencoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

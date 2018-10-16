@@ -10,24 +10,40 @@ import XCTest
 @testable import Torrential
 
 class TorrentialTests: XCTestCase {
+    
+    private let bdecoder = Bdecoder()
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testBencodedStringSuccess() {
+        do {
+            let sut = "6:string"
+            let result = try bdecoder.decode(sut)
+            XCTAssertEqual(result, BencodedType.string("string"))
+        } catch {
+            XCTFail("Expected success, but test failed with error: \(error)")
+        }
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testBencodedStringMissingColon() {
+        do {
+            let sut = "6string"
+            let result = try bdecoder.decode(sut)
+            XCTFail("Expected failure, but test succeeded with result: \(result)")
+        } catch let e as Bdecoder.Error {
+            XCTAssertEqual(e, .missingToken)
+        } catch {
+            XCTFail("Expected failure of type \(Bdecoder.Error.missingToken), but test failed with wrong error type: \(error)")
+        }
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testBencodedStringInvalidStringLength() {
+        do {
+            let sut = "6r5:string"
+            let result = try bdecoder.decode(sut)
+            XCTFail("Expected failure, but test succeeded with result: \(result)")
+        } catch let e as Bdecoder.Error {
+            XCTAssertEqual(e, .invalidStringLength)
+        } catch {
+            XCTFail("Expected failure of type \(Bdecoder.Error.missingToken), but test failed with wrong error type: \(error)")
         }
     }
 
