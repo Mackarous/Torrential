@@ -110,8 +110,8 @@
 			children = (
 				49767B26216FD2930050AD9A /* AppDelegate.swift */,
 				49767B28216FD2930050AD9A /* ViewController.swift */,
-				49377597217943D9007727EC /* Torrent */,
 				49767B44216FD2A60050AD9A /* Bdecoder.swift */,
+				49377597217943D9007727EC /* Torrent */,
 				49767B2A216FD2940050AD9A /* Assets.xcassets */,
 				49767B2C216FD2940050AD9A /* Main.storyboard */,
 				49767B2F216FD2940050AD9A /* Info.plist */,
