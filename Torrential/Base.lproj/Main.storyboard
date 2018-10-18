@@ -706,28 +706,50 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Torrential" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="349"/>
+                        <rect key="frame" x="0.0" y="0.0" width="395" height="303"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box boxType="custom" cornerRadius="4" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="lMm-ij-jeZ">
-                                <rect key="frame" x="120" y="87" width="240" height="175"/>
+                                <rect key="frame" x="66" y="50" width="263" height="202"/>
                                 <view key="contentView" id="fDI-Uz-d0b">
-                                    <rect key="frame" x="1" y="1" width="238" height="173"/>
+                                    <rect key="frame" x="1" y="1" width="261" height="200"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mfd-or-q8N">
+                                            <rect key="frame" x="0.0" y="-1" width="261" height="202"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="0eJ-8E-69N"/>
+                                                <constraint firstAttribute="height" constant="200" id="uYO-Qn-537"/>
+                                            </constraints>
+                                            <buttonCell key="cell" type="smallSquare" title="Open File or Drag and Drop" bezelStyle="smallSquare" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wVr-XE-baV">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="openFile:" target="XfG-lQ-9wD" id="zLe-Tb-03y"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mfd-or-q8N" firstAttribute="top" secondItem="fDI-Uz-d0b" secondAttribute="top" id="3OA-ci-zef"/>
+                                        <constraint firstItem="mfd-or-q8N" firstAttribute="leading" secondItem="fDI-Uz-d0b" secondAttribute="leading" id="B3g-5g-Tae"/>
+                                        <constraint firstAttribute="bottom" secondItem="mfd-or-q8N" secondAttribute="bottom" id="MrD-ZE-pWi"/>
+                                        <constraint firstAttribute="trailing" secondItem="mfd-or-q8N" secondAttribute="trailing" id="W6m-lL-Ojk"/>
+                                    </constraints>
                                 </view>
                             </box>
                         </subviews>
                         <constraints>
                             <constraint firstItem="lMm-ij-jeZ" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="7lk-Sc-5Np"/>
-                            <constraint firstItem="lMm-ij-jeZ" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="0.5" id="ANf-du-Dl3"/>
-                            <constraint firstItem="lMm-ij-jeZ" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" multiplier="0.5" id="TDs-Ap-AsC"/>
+                            <constraint firstItem="lMm-ij-jeZ" firstAttribute="width" secondItem="m2S-Jp-Qdl" secondAttribute="width" multiplier="2:3" id="ANf-du-Dl3"/>
+                            <constraint firstItem="lMm-ij-jeZ" firstAttribute="height" secondItem="m2S-Jp-Qdl" secondAttribute="height" multiplier="2:3" id="TDs-Ap-AsC"/>
                             <constraint firstItem="lMm-ij-jeZ" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="owz-cR-280"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="819.5"/>
+            <point key="canvasLocation" x="76" y="761"/>
         </scene>
     </scenes>
 </document>

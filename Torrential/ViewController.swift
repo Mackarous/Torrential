@@ -12,29 +12,17 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        do {
-            let stuff = try loadTest()!
-            print(stuff)
-        } catch {
-            print(error)
-        }
+//        view.registerForDraggedTypes([.fileURL])
     }
     
-    private func loadTest() throws -> BencodeType? {
-        guard let url = Bundle.main.url(forResource: "bunny", withExtension: "torrent") else { return nil }
-        let data = try Data(contentsOf: url)
-        guard let string = String(data: data, encoding: .ascii) else { return nil }
-        let decoder = Bdecoder()
-        return try decoder.decode(string)
+    @IBAction func openFile(_ sender: Any) {
+        let panel = NSOpenPanel()
+        panel.allowedFileTypes = ["torrent"]
+        let clicked = panel.runModal()
+        guard clicked == .OK, let url = panel.url else { return }
+        let reader = TorrentReader(fileURL: url)
+        let torrentData = reader.loadTorrentMetadata()
+        print(torrentData)
     }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
-
 }
 

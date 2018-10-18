@@ -13,6 +13,26 @@ enum BencodeType: Equatable {
     case string(String)
     indirect case list([BencodeType])
     indirect case dictionary([String: BencodeType])
+    
+    var integer: Int? {
+        guard case let .integer(i) = self else { return nil }
+        return i
+    }
+
+    var string: String? {
+        guard case let .string(s) = self else { return nil }
+        return s
+    }
+
+    var list: [BencodeType]? {
+        guard case let .list(l) = self else { return nil }
+        return l
+    }
+
+    var dictionary: [String: BencodeType]? {
+        guard case let .dictionary(d) = self else { return nil }
+        return d
+    }
 }
 
 struct Bdecoder {
@@ -92,9 +112,13 @@ struct Bdecoder {
         var startIndex = string.index(string.startIndex, offsetBy: index + 1)
         var dict = [String: BencodeType]()
         while string[startIndex] != Token.end {
-            guard Token.string.contains(string[startIndex]) else { throw Error.invalidDictionaryKey }
+            guard Token.string.contains(string[startIndex]) else {
+                throw Error.invalidDictionaryKey
+            }
             let keyResult = try parseString(string, fromIndex: startIndex.encodedOffset)
-            guard case let .string(key) = keyResult.type else { throw Error.invalidDictionaryKey }
+            guard case let .string(key) = keyResult.type else {
+                throw Error.invalidDictionaryKey
+            }
             let valueResult = try decode(string, index: keyResult.endIndex + 1)
             dict[key] = valueResult.type
             startIndex = string.index(string.startIndex, offsetBy: valueResult.endIndex + 1)

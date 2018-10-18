@@ -10,9 +10,8 @@
 		490ACE512177E2B20010208D /* BdecoderIntegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ACE502177E2B20010208D /* BdecoderIntegerTests.swift */; };
 		490ACE53217909DD0010208D /* BdecoderListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ACE52217909DD0010208D /* BdecoderListTests.swift */; };
 		490ACE552179118D0010208D /* BdecoderDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ACE542179118D0010208D /* BdecoderDictionaryTests.swift */; };
-		49377590217925AE007727EC /* bunny.torrent in Resources */ = {isa = PBXBuildFile; fileRef = 4937758F217920F5007727EC /* bunny.torrent */; };
-		493775922179269D007727EC /* BencodeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493775912179269D007727EC /* BencodeReader.swift */; };
-		49377594217928AA007727EC /* DesignableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49377593217928AA007727EC /* DesignableViews.swift */; };
+		493775922179269D007727EC /* TorrentReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493775912179269D007727EC /* TorrentReader.swift */; };
+		49377596217943D5007727EC /* TorrentMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49377595217943D5007727EC /* TorrentMetadata.swift */; };
 		49767B27216FD2930050AD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B26216FD2930050AD9A /* AppDelegate.swift */; };
 		49767B29216FD2930050AD9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B28216FD2930050AD9A /* ViewController.swift */; };
 		49767B2B216FD2940050AD9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49767B2A216FD2940050AD9A /* Assets.xcassets */; };
@@ -35,9 +34,8 @@
 		490ACE502177E2B20010208D /* BdecoderIntegerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BdecoderIntegerTests.swift; sourceTree = "<group>"; };
 		490ACE52217909DD0010208D /* BdecoderListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BdecoderListTests.swift; sourceTree = "<group>"; };
 		490ACE542179118D0010208D /* BdecoderDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BdecoderDictionaryTests.swift; sourceTree = "<group>"; };
-		4937758F217920F5007727EC /* bunny.torrent */ = {isa = PBXFileReference; lastKnownFileType = file; path = bunny.torrent; sourceTree = "<group>"; };
-		493775912179269D007727EC /* BencodeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BencodeReader.swift; sourceTree = "<group>"; };
-		49377593217928AA007727EC /* DesignableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableViews.swift; sourceTree = "<group>"; };
+		493775912179269D007727EC /* TorrentReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentReader.swift; sourceTree = "<group>"; };
+		49377595217943D5007727EC /* TorrentMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentMetadata.swift; sourceTree = "<group>"; };
 		49767B23216FD2930050AD9A /* Torrential.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Torrential.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49767B26216FD2930050AD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49767B28216FD2930050AD9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +78,15 @@
 			path = BdecoderTests;
 			sourceTree = "<group>";
 		};
+		49377597217943D9007727EC /* Torrent */ = {
+			isa = PBXGroup;
+			children = (
+				493775912179269D007727EC /* TorrentReader.swift */,
+				49377595217943D5007727EC /* TorrentMetadata.swift */,
+			);
+			path = Torrent;
+			sourceTree = "<group>";
+		};
 		49767B1A216FD2930050AD9A = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +108,9 @@
 		49767B25216FD2930050AD9A /* Torrential */ = {
 			isa = PBXGroup;
 			children = (
-				4937758F217920F5007727EC /* bunny.torrent */,
 				49767B26216FD2930050AD9A /* AppDelegate.swift */,
 				49767B28216FD2930050AD9A /* ViewController.swift */,
-				493775912179269D007727EC /* BencodeReader.swift */,
-				49377593217928AA007727EC /* DesignableViews.swift */,
+				49377597217943D9007727EC /* Torrent */,
 				49767B44216FD2A60050AD9A /* Bdecoder.swift */,
 				49767B2A216FD2940050AD9A /* Assets.xcassets */,
 				49767B2C216FD2940050AD9A /* Main.storyboard */,
@@ -206,7 +211,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49767B2B216FD2940050AD9A /* Assets.xcassets in Resources */,
-				49377590217925AE007727EC /* bunny.torrent in Resources */,
 				49767B2E216FD2940050AD9A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,11 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49377596217943D5007727EC /* TorrentMetadata.swift in Sources */,
 				49767B29216FD2930050AD9A /* ViewController.swift in Sources */,
-				493775922179269D007727EC /* BencodeReader.swift in Sources */,
+				493775922179269D007727EC /* TorrentReader.swift in Sources */,
 				49767B27216FD2930050AD9A /* AppDelegate.swift in Sources */,
 				49767B45216FD2A60050AD9A /* Bdecoder.swift in Sources */,
-				49377594217928AA007727EC /* DesignableViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
