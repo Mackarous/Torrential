@@ -9,7 +9,7 @@
 import XCTest
 @testable import Torrential
 
-class TorrentialTests: XCTestCase {
+class BdecoderStringTests: XCTestCase {
     
     private let bdecoder = Bdecoder()
 
@@ -17,7 +17,7 @@ class TorrentialTests: XCTestCase {
         do {
             let sut = "6:string"
             let result = try bdecoder.decode(sut)
-            XCTAssertEqual(result, BencodedType.string("string"))
+            XCTAssertEqual(result, BencodeType.string("string"))
         } catch {
             XCTFail("Expected success, but test failed with error: \(error)")
         }
@@ -46,5 +46,4 @@ class TorrentialTests: XCTestCase {
             XCTFail("Expected failure of type \(Bdecoder.Error.missingToken), but test failed with wrong error type: \(error)")
         }
     }
-
 }
