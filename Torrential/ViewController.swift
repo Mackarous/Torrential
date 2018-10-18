@@ -19,10 +19,14 @@ final class ViewController: NSViewController {
         let clicked = panel.runModal()
         guard clicked == .OK, let url = panel.url else { return }
         let reader = TorrentReader(fileURL: url)
-        let metadata = reader.loadTorrentMetadata()
-        createdByField.stringValue = metadata?.createdBy ?? "Unkown"
-        creationDateField.stringValue = metadata?.creationDate?.stringValue ?? "Unknown"
-        trackerURLField.stringValue = metadata?.announce ?? "Unknown"
+        guard let metadata = reader.loadTorrentMetadata() else { return }
+        configure(metadata)
+    }
+    
+    private func configure(_ metadata: TorrentMetadata) {
+        createdByField.stringValue = metadata.createdBy ?? "Unkown"
+        creationDateField.stringValue = metadata.creationDate?.stringValue ?? "Unknown"
+        trackerURLField.stringValue = metadata.announce ?? "Unknown"
     }
 }
 
