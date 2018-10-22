@@ -13,7 +13,7 @@
 		493775922179269D007727EC /* TorrentReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493775912179269D007727EC /* TorrentReader.swift */; };
 		49377596217943D5007727EC /* TorrentMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49377595217943D5007727EC /* TorrentMetadata.swift */; };
 		49767B27216FD2930050AD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B26216FD2930050AD9A /* AppDelegate.swift */; };
-		49767B29216FD2930050AD9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B28216FD2930050AD9A /* ViewController.swift */; };
+		49767B29216FD2930050AD9A /* TorrentMetadataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B28216FD2930050AD9A /* TorrentMetadataViewController.swift */; };
 		49767B2B216FD2940050AD9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49767B2A216FD2940050AD9A /* Assets.xcassets */; };
 		49767B2E216FD2940050AD9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49767B2C216FD2940050AD9A /* Main.storyboard */; };
 		49767B3A216FD2940050AD9A /* BdecoderStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B39216FD2940050AD9A /* BdecoderStringTests.swift */; };
@@ -38,7 +38,7 @@
 		49377595217943D5007727EC /* TorrentMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentMetadata.swift; sourceTree = "<group>"; };
 		49767B23216FD2930050AD9A /* Torrential.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Torrential.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49767B26216FD2930050AD9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49767B28216FD2930050AD9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49767B28216FD2930050AD9A /* TorrentMetadataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentMetadataViewController.swift; sourceTree = "<group>"; };
 		49767B2A216FD2940050AD9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49767B2D216FD2940050AD9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49767B2F216FD2940050AD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +81,7 @@
 		49377597217943D9007727EC /* Torrent */ = {
 			isa = PBXGroup;
 			children = (
+				49767B44216FD2A60050AD9A /* Bdecoder.swift */,
 				493775912179269D007727EC /* TorrentReader.swift */,
 				49377595217943D5007727EC /* TorrentMetadata.swift */,
 			);
@@ -109,8 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				49767B26216FD2930050AD9A /* AppDelegate.swift */,
-				49767B28216FD2930050AD9A /* ViewController.swift */,
-				49767B44216FD2A60050AD9A /* Bdecoder.swift */,
+				49767B28216FD2930050AD9A /* TorrentMetadataViewController.swift */,
 				49377597217943D9007727EC /* Torrent */,
 				49767B2A216FD2940050AD9A /* Assets.xcassets */,
 				49767B2C216FD2940050AD9A /* Main.storyboard */,
@@ -230,7 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49377596217943D5007727EC /* TorrentMetadata.swift in Sources */,
-				49767B29216FD2930050AD9A /* ViewController.swift in Sources */,
+				49767B29216FD2930050AD9A /* TorrentMetadataViewController.swift in Sources */,
 				493775922179269D007727EC /* TorrentReader.swift in Sources */,
 				49767B27216FD2930050AD9A /* AppDelegate.swift in Sources */,
 				49767B45216FD2A60050AD9A /* Bdecoder.swift in Sources */,

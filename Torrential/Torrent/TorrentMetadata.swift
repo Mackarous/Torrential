@@ -15,8 +15,8 @@ struct TorrentMetadata {
         let length: Int?
         let md5sum: String?
         
-        init?(metainfo: [String: BencodeType]) {
-            name = metainfo["name"]?.string
+        init(metainfo: [String: BencodeType]) {
+            name = metainfo["name"]?.string ?? metainfo["path"]?.list?.first?.string
             length = metainfo["length"]?.integer
             md5sum = metainfo["md5sum"]?.string
         }
@@ -37,7 +37,11 @@ struct TorrentMetadata {
             name = metainfo["name"]?.string
             length = metainfo["length"]?.integer
             md5sum = metainfo["md5sum"]?.string
-            files = metainfo["files"]?.list?.compactMap({ $0.dictionary }).compactMap(File.init) ?? []
+            if let files = metainfo["files"]?.list?.compactMap({ $0.dictionary }).compactMap(File.init), !files.isEmpty  {
+                self.files = files
+            } else {
+                files = [File(metainfo: metainfo)]
+            }
         }
     }
     
