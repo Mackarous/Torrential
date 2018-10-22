@@ -11,12 +11,19 @@ import Foundation
 /// BitTorrent metainfo specification found here: https://wiki.theory.org/index.php/BitTorrentSpecification#Metainfo_File_Structure
 struct TorrentMetadata {
     struct File {
-        let name: String?
+        let path: [String]
         let length: Int?
         let md5sum: String?
         
+        init?(name: String?, length: Int?, md5sum: String?) {
+            guard let name = name else { return nil }
+            path = [name]
+            self.length = length
+            self.md5sum = md5sum
+        }
+        
         init(metainfo: [String: BencodeType]) {
-            name = metainfo["name"]?.string ?? metainfo["path"]?.list?.first?.string
+            path = metainfo["path"]?.list?.compactMap { $0.string } ?? []
             length = metainfo["length"]?.integer
             md5sum = metainfo["md5sum"]?.string
         }
@@ -25,23 +32,25 @@ struct TorrentMetadata {
         let pieceLength: Int?
         let pieces: String?
         let isPrivate: Bool
-        let name: String?
-        let length: Int?
-        let md5sum: String?
         let files: [File]
         
         init(metainfo: [String: BencodeType]) {
             pieceLength = metainfo["piece length"]?.integer
             pieces = metainfo["pieces"]?.string
             isPrivate = metainfo["private"]?.integer == 1
-            name = metainfo["name"]?.string
-            length = metainfo["length"]?.integer
-            md5sum = metainfo["md5sum"]?.string
-            if let files = metainfo["files"]?.list?.compactMap({ $0.dictionary }).compactMap(File.init), !files.isEmpty  {
+            let files = metainfo["files"]?.list?.compactMap({ $0.dictionary }).compactMap(File.init) ?? []
+            guard files.isEmpty else {
                 self.files = files
-            } else {
-                files = [File(metainfo: metainfo)]
+                return
             }
+            let name = metainfo["name"]?.string
+            let length = metainfo["length"]?.integer
+            let md5sum = metainfo["md5sum"]?.string
+            guard let file = File(name: name, length: length, md5sum: md5sum) else {
+                self.files = []
+                return
+            }
+            self.files = [file]
         }
     }
     

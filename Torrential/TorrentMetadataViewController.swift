@@ -18,7 +18,7 @@ final class TorrentMetadataViewController: NSViewController {
     private var tableViewData: [[String: String]] {
         return files.map {
             [
-                "name": $0.name ?? "",
+                "name": $0.path.last ?? "",
                 "length": $0.length?.stringValue ?? "",
                 "md5sum": $0.md5sum ?? ""
             ]
