@@ -10,11 +10,10 @@ import Foundation
 
 struct TorrentReader {
     private let decoder = Bdecoder()
-    let fileURL: URL
     
-    func loadTorrentMetadata() -> TorrentMetadata? {
+    func loadTorrentMetadata(from url: URL) -> TorrentMetadata? {
         do {
-            let data = try Data(contentsOf: fileURL)
+            let data = try Data(contentsOf: url)
             guard let string = String(data: data, encoding: .ascii) else { return nil }
             let result = try decoder.decode(string)
             return TorrentMetadata(bencodeType: result)

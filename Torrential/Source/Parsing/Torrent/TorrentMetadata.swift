@@ -10,7 +10,7 @@ import Foundation
 
 /// BitTorrent metainfo specification found here: https://wiki.theory.org/index.php/BitTorrentSpecification#Metainfo_File_Structure
 struct TorrentMetadata {
-    struct File {
+    struct File: Equatable, Hashable {
         let path: [String]
         let length: Int?
         let md5sum: String?

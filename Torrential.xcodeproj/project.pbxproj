@@ -10,6 +10,9 @@
 		490ACE512177E2B20010208D /* BdecoderIntegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ACE502177E2B20010208D /* BdecoderIntegerTests.swift */; };
 		490ACE53217909DD0010208D /* BdecoderListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ACE52217909DD0010208D /* BdecoderListTests.swift */; };
 		490ACE552179118D0010208D /* BdecoderDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490ACE542179118D0010208D /* BdecoderDictionaryTests.swift */; };
+		4910E83F21838DA50025EB56 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910E83E21838DA50025EB56 /* File.swift */; };
+		4910E84221838DE80025EB56 /* StringValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910E84121838DE80025EB56 /* StringValue.swift */; };
+		4910E84421838DFD0025EB56 /* Sequence+KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4910E84321838DFD0025EB56 /* Sequence+KeyPath.swift */; };
 		493775922179269D007727EC /* TorrentReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493775912179269D007727EC /* TorrentReader.swift */; };
 		49377596217943D5007727EC /* TorrentMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49377595217943D5007727EC /* TorrentMetadata.swift */; };
 		49767B27216FD2930050AD9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B26216FD2930050AD9A /* AppDelegate.swift */; };
@@ -34,6 +37,9 @@
 		490ACE502177E2B20010208D /* BdecoderIntegerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BdecoderIntegerTests.swift; sourceTree = "<group>"; };
 		490ACE52217909DD0010208D /* BdecoderListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BdecoderListTests.swift; sourceTree = "<group>"; };
 		490ACE542179118D0010208D /* BdecoderDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BdecoderDictionaryTests.swift; sourceTree = "<group>"; };
+		4910E83E21838DA50025EB56 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		4910E84121838DE80025EB56 /* StringValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringValue.swift; sourceTree = "<group>"; };
+		4910E84321838DFD0025EB56 /* Sequence+KeyPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+KeyPath.swift"; sourceTree = "<group>"; };
 		493775912179269D007727EC /* TorrentReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentReader.swift; sourceTree = "<group>"; };
 		49377595217943D5007727EC /* TorrentMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentMetadata.swift; sourceTree = "<group>"; };
 		49767B23216FD2930050AD9A /* Torrential.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Torrential.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,14 +84,78 @@
 			path = BdecoderTests;
 			sourceTree = "<group>";
 		};
-		49377597217943D9007727EC /* Torrent */ = {
+		4910E83721838C570025EB56 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49767B28216FD2930050AD9A /* TorrentMetadataViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4910E83821838C7E0025EB56 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49767B2A216FD2940050AD9A /* Assets.xcassets */,
+				49767B2C216FD2940050AD9A /* Main.storyboard */,
+				49767B2F216FD2940050AD9A /* Info.plist */,
+				49767B30216FD2940050AD9A /* Torrential.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4910E83A21838CCD0025EB56 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				49767B26216FD2930050AD9A /* AppDelegate.swift */,
+				4910E84021838DD40025EB56 /* Extensions */,
+				49377597217943D9007727EC /* Model */,
+				4910E83B21838CF50025EB56 /* Parsing */,
+				4910E83721838C570025EB56 /* View */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		4910E83B21838CF50025EB56 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				4910E83D21838D950025EB56 /* Bencode */,
+				4910E83C21838CFB0025EB56 /* Torrent */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		4910E83C21838CFB0025EB56 /* Torrent */ = {
+			isa = PBXGroup;
+			children = (
+				49377595217943D5007727EC /* TorrentMetadata.swift */,
+				493775912179269D007727EC /* TorrentReader.swift */,
+			);
+			path = Torrent;
+			sourceTree = "<group>";
+		};
+		4910E83D21838D950025EB56 /* Bencode */ = {
 			isa = PBXGroup;
 			children = (
 				49767B44216FD2A60050AD9A /* Bdecoder.swift */,
-				493775912179269D007727EC /* TorrentReader.swift */,
-				49377595217943D5007727EC /* TorrentMetadata.swift */,
 			);
-			path = Torrent;
+			path = Bencode;
+			sourceTree = "<group>";
+		};
+		4910E84021838DD40025EB56 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4910E84321838DFD0025EB56 /* Sequence+KeyPath.swift */,
+				4910E84121838DE80025EB56 /* StringValue.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		49377597217943D9007727EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4910E83E21838DA50025EB56 /* File.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		49767B1A216FD2930050AD9A = {
@@ -109,13 +179,8 @@
 		49767B25216FD2930050AD9A /* Torrential */ = {
 			isa = PBXGroup;
 			children = (
-				49767B26216FD2930050AD9A /* AppDelegate.swift */,
-				49767B28216FD2930050AD9A /* TorrentMetadataViewController.swift */,
-				49377597217943D9007727EC /* Torrent */,
-				49767B2A216FD2940050AD9A /* Assets.xcassets */,
-				49767B2C216FD2940050AD9A /* Main.storyboard */,
-				49767B2F216FD2940050AD9A /* Info.plist */,
-				49767B30216FD2940050AD9A /* Torrential.entitlements */,
+				4910E83A21838CCD0025EB56 /* Source */,
+				4910E83821838C7E0025EB56 /* Resources */,
 			);
 			path = Torrential;
 			sourceTree = "<group>";
@@ -230,7 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49377596217943D5007727EC /* TorrentMetadata.swift in Sources */,
+				4910E83F21838DA50025EB56 /* File.swift in Sources */,
 				49767B29216FD2930050AD9A /* TorrentMetadataViewController.swift in Sources */,
+				4910E84421838DFD0025EB56 /* Sequence+KeyPath.swift in Sources */,
+				4910E84221838DE80025EB56 /* StringValue.swift in Sources */,
 				493775922179269D007727EC /* TorrentReader.swift in Sources */,
 				49767B27216FD2930050AD9A /* AppDelegate.swift in Sources */,
 				49767B45216FD2A60050AD9A /* Bdecoder.swift in Sources */,
@@ -389,11 +457,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Torrential/Torrential.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Torrential/Resources/Torrential.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2AZD6AW5E9;
-				INFOPLIST_FILE = Torrential/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Torrential/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -408,11 +476,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Torrential/Torrential.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Torrential/Resources/Torrential.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2AZD6AW5E9;
-				INFOPLIST_FILE = Torrential/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Torrential/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
