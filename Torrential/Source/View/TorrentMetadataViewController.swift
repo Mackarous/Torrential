@@ -10,7 +10,7 @@ import Cocoa
 
 final class TorrentMetadataViewController: NSViewController {
     private enum ColumnIdentifier: String {
-        case name, size
+        case name, size, checksum
     }
     
     @IBOutlet private var createdByField: NSTextField!
@@ -47,12 +47,14 @@ final class TorrentMetadataViewController: NSViewController {
                 children = parseFiles(files.filter { $0.path.contains(file.path[index]) }, index: index + 1)
             }
             let size: Int
+            var checksum = ""
             if children.isEmpty {
                 size = file.length ?? 0
+                checksum = file.md5sum ?? ""
             } else {
                 size = children.map(\.size).reduce(0, +)
             }
-            parsedFiles.append(File(name: file.path[index], size: size, files: children))
+            parsedFiles.append(File(name: file.path[index], size: size, checksum: checksum, files: children))
         }
         return parsedFiles
     }
@@ -91,6 +93,8 @@ extension TorrentMetadataViewController: NSOutlineViewDelegate {
             cell.textField?.stringValue = file.name
         case .size:
             cell.textField?.stringValue = file.size.byteCountStringValue
+        case .checksum:
+            cell.textField?.stringValue = file.checksum
         }
         return cell
     }

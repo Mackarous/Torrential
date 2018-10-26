@@ -11,5 +11,6 @@ import Foundation
 struct File: Hashable {
     let name: String
     let size: Int
+    let checksum: String
     let files: [File]
 }
