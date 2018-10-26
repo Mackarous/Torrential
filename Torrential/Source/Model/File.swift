@@ -8,15 +8,8 @@
 
 import Foundation
 
-struct File {
+struct File: Hashable {
     let name: String
-    let length: String
-    let md5sum: String
-    var files = [File]()
-    
-    init(name: String, length: String, md5sum: String) {
-        self.name = name
-        self.length = length
-        self.md5sum = md5sum
-    }
+    let size: Int
+    let files: [File]
 }

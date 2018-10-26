@@ -12,6 +12,16 @@ extension Int {
     var stringValue: String {
         return String(self)
     }
+    
+    var byteCountStringValue: String {
+        return Int64(self).byteCountStringValue
+    }
+}
+
+extension Int64 {
+    var byteCountStringValue: String {
+        return ByteCountFormatter().string(fromByteCount: self)
+    }
 }
 
 extension Date {

@@ -10,7 +10,7 @@ import Cocoa
 
 final class TorrentMetadataViewController: NSViewController {
     private enum ColumnIdentifier: String {
-        case name, length, md5sum
+        case name, size
     }
     
     @IBOutlet private var createdByField: NSTextField!
@@ -21,7 +21,7 @@ final class TorrentMetadataViewController: NSViewController {
     private let reader = TorrentReader()
     private var directory = [File]()
     
-    @IBAction func openFile(_ sender: Any) {
+    @IBAction private func openFile(_ sender: Any) {
         let panel = NSOpenPanel()
         panel.allowedFileTypes = ["torrent"]
         let clicked = panel.runModal()
@@ -35,14 +35,26 @@ final class TorrentMetadataViewController: NSViewController {
         createdByField.stringValue = metadata.createdBy ?? "Unkown"
         creationDateField.stringValue = metadata.creationDate?.stringValue ?? "Unknown"
         trackerURLField.stringValue = metadata.announce ?? "Unknown"
-        directory = parseDirectory(from: metadata)
+        directory = parseFiles(metadata.info.files)
     }
     
-    private func parseDirectory(from metadata: TorrentMetadata) -> [File] {
-        let rootFiles = metadata.info.files
-            .filter { $0.path.count == 1 }
-            .map { File(name: $0.path.first ?? "", length: $0.length?.stringValue ?? "", md5sum: $0.md5sum ?? "") }
-        return rootFiles
+    func parseFiles(_ files: [TorrentMetadata.File], index: Int = 0) -> [File] {
+        var parsedFiles = [File]()
+        files.forEach { file in
+            guard index < file.path.count, !parsedFiles.contains(where: { $0.name == file.path[index] }) else { return }
+            var children = [File]()
+            if file.path.count > index + 1 {
+                children = parseFiles(files.filter { $0.path.contains(file.path[index]) }, index: index + 1)
+            }
+            let size: Int
+            if children.isEmpty {
+                size = file.length ?? 0
+            } else {
+                size = children.map(\.size).reduce(0, +)
+            }
+            parsedFiles.append(File(name: file.path[index], size: size, files: children))
+        }
+        return parsedFiles
     }
 }
 
@@ -77,10 +89,8 @@ extension TorrentMetadataViewController: NSOutlineViewDelegate {
         switch identifier {
         case .name:
             cell.textField?.stringValue = file.name
-        case .length:
-            cell.textField?.stringValue = file.length
-        case .md5sum:
-            cell.textField?.stringValue = file.md5sum
+        case .size:
+            cell.textField?.stringValue = file.size.byteCountStringValue
         }
         return cell
     }
