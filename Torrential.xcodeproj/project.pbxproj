@@ -21,6 +21,9 @@
 		49767B2E216FD2940050AD9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49767B2C216FD2940050AD9A /* Main.storyboard */; };
 		49767B3A216FD2940050AD9A /* BdecoderStringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B39216FD2940050AD9A /* BdecoderStringTests.swift */; };
 		49767B45216FD2A60050AD9A /* Bdecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767B44216FD2A60050AD9A /* Bdecoder.swift */; };
+		499B3E902183BAA000CA1AE4 /* bunny.torrent in Resources */ = {isa = PBXBuildFile; fileRef = 499B3E8F2183BAA000CA1AE4 /* bunny.torrent */; };
+		499B3E922183BABE00CA1AE4 /* TorrentMetadataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B3E912183BABE00CA1AE4 /* TorrentMetadataTests.swift */; };
+		499B3E942183BCCF00CA1AE4 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499B3E932183BCCF00CA1AE4 /* ExtensionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		49767B39216FD2940050AD9A /* BdecoderStringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BdecoderStringTests.swift; sourceTree = "<group>"; };
 		49767B3B216FD2940050AD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49767B44216FD2A60050AD9A /* Bdecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bdecoder.swift; sourceTree = "<group>"; };
+		499B3E8F2183BAA000CA1AE4 /* bunny.torrent */ = {isa = PBXFileReference; lastKnownFileType = file; path = bunny.torrent; sourceTree = "<group>"; };
+		499B3E912183BABE00CA1AE4 /* TorrentMetadataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorrentMetadataTests.swift; sourceTree = "<group>"; };
+		499B3E932183BCCF00CA1AE4 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,9 @@
 		49767B38216FD2940050AD9A /* TorrentialTests */ = {
 			isa = PBXGroup;
 			children = (
+				499B3E8F2183BAA000CA1AE4 /* bunny.torrent */,
+				499B3E912183BABE00CA1AE4 /* TorrentMetadataTests.swift */,
+				499B3E932183BCCF00CA1AE4 /* ExtensionTests.swift */,
 				490ACE4F2177E29B0010208D /* BdecoderTests */,
 				49767B3B216FD2940050AD9A /* Info.plist */,
 			);
@@ -284,6 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				499B3E902183BAA000CA1AE4 /* bunny.torrent in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +322,8 @@
 				490ACE512177E2B20010208D /* BdecoderIntegerTests.swift in Sources */,
 				490ACE552179118D0010208D /* BdecoderDictionaryTests.swift in Sources */,
 				490ACE53217909DD0010208D /* BdecoderListTests.swift in Sources */,
+				499B3E942183BCCF00CA1AE4 /* ExtensionTests.swift in Sources */,
+				499B3E922183BABE00CA1AE4 /* TorrentMetadataTests.swift in Sources */,
 				49767B3A216FD2940050AD9A /* BdecoderStringTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,17 +9,26 @@
 import Foundation
 
 struct TorrentReader {
+    enum Error: LocalizedError {
+        case malformedData, invalidMetadata
+        
+        var errorDescription: String? {
+            switch self {
+            case .malformedData:
+                return "The data in the Bencoded file is malformed. Could not encode to ASCII."
+            case .invalidMetadata:
+                return "There was an error parsing the metadata. No data was found."
+            }
+        }
+    }
+    
     private let decoder = Bdecoder()
     
-    func loadTorrentMetadata(from url: URL) -> TorrentMetadata? {
-        do {
-            let data = try Data(contentsOf: url)
-            guard let string = String(data: data, encoding: .ascii) else { return nil }
-            let result = try decoder.decode(string)
-            return TorrentMetadata(bencodeType: result)
-        } catch {
-            print(error)
-            return nil
-        }
+    func loadTorrentMetadata(from url: URL) throws -> TorrentMetadata {
+        let data = try Data(contentsOf: url)
+        guard let string = String(data: data, encoding: .ascii) else { throw Error.malformedData }
+        let result = try decoder.decode(string)
+        guard let metadata = TorrentMetadata(bencodeType: result) else { throw Error.invalidMetadata }
+        return metadata
     }
 }

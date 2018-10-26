@@ -36,13 +36,30 @@ enum BencodeType: Equatable {
 }
 
 struct Bdecoder {
-    enum Error: Swift.Error {
+    enum Error: LocalizedError {
         case invalidDictionaryKey
         case invalidList
         case invalidInteger
         case invalidStringLength
         case malformedBencoding
         case missingToken
+        
+        var errorDescription: String? {
+            switch self {
+            case .invalidDictionaryKey:
+                return "There was an error parsing a dictionary element in the Bencoded file"
+            case .invalidList:
+                return "There was an error parsing a list element in the Bencoded file"
+            case .invalidInteger:
+                return "There was an error parsing an integer element in the Bencoded file"
+            case .invalidStringLength:
+                return "There was an error parsing a string element in the Bencoded file"
+            case .malformedBencoding:
+                return "There was an unknown error while parsing the Bencoded file"
+            case .missingToken:
+                return "There was an error parsing the Bencoded file: missing expected token."
+            }
+        }
     }
     
     private enum Token {

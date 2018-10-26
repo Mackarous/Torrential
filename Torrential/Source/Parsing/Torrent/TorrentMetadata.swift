@@ -23,7 +23,7 @@ struct TorrentMetadata {
         }
         
         init(metainfo: [String: BencodeType]) {
-            path = metainfo["path"]?.list?.compactMap { $0.string } ?? []
+            path = metainfo["path"]?.list?.compactMap(\.string) ?? []
             length = metainfo["length"]?.integer
             md5sum = metainfo["md5sum"]?.string
         }
@@ -38,7 +38,7 @@ struct TorrentMetadata {
             pieceLength = metainfo["piece length"]?.integer
             pieces = metainfo["pieces"]?.string
             isPrivate = metainfo["private"]?.integer == 1
-            let files = metainfo["files"]?.list?.compactMap({ $0.dictionary }).compactMap(File.init) ?? []
+            let files = metainfo["files"]?.list?.compactMap(\.dictionary).compactMap(File.init) ?? []
             guard files.isEmpty else {
                 self.files = files
                 return
@@ -66,8 +66,10 @@ struct TorrentMetadata {
         guard let metainfo = bencodeType.dictionary else { return nil }
         guard let info = metainfo["info"]?.dictionary else { return nil }
         self.info = Info(metainfo: info)
-        announce = metainfo["announce"]?.string
-        announceList = metainfo["announce-list"]?.list?.compactMap { $0.string } ?? []
+        announce = metainfo["announce"]?.string ?? metainfo["url"]?.string
+        announceList = metainfo["announce-list"]?.list?.compactMap(\.string)
+            ?? metainfo["url-list"]?.list?.compactMap(\.string)
+            ?? []
         createdBy = metainfo["created by"]?.string
         if let timeInterval = metainfo["creation date"]?.integer {
             creationDate = Date(timeIntervalSince1970: TimeInterval(timeInterval))

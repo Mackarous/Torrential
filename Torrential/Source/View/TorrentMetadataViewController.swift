@@ -26,15 +26,19 @@ final class TorrentMetadataViewController: NSViewController {
         panel.allowedFileTypes = ["torrent"]
         let clicked = panel.runModal()
         guard clicked == .OK, let url = panel.url else { return }
-        guard let metadata = reader.loadTorrentMetadata(from: url) else { return }
-        configure(metadata)
-        outlineView.reloadData()
+        do {
+            let metadata = try reader.loadTorrentMetadata(from: url)
+            configure(metadata)
+            outlineView.reloadData()
+        } catch {
+            NSAlert(error: error).runModal()
+        }
     }
     
     private func configure(_ metadata: TorrentMetadata) {
         createdByField.stringValue = metadata.createdBy ?? "Unkown"
         creationDateField.stringValue = metadata.creationDate?.stringValue ?? "Unknown"
-        trackerURLField.stringValue = metadata.announce ?? "Unknown"
+        trackerURLField.stringValue = metadata.announce ?? metadata.announceList.first ?? "Unknown"
         directory = parseFiles(metadata.info.files)
     }
     

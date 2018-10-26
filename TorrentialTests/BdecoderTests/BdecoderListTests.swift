@@ -6,10 +6,10 @@
 //  Copyright © 2018 Mackarous. All rights reserved.
 //
 
-import XCTest
 @testable import Torrential
+import XCTest
 
-class BdecoderListTests: XCTestCase {
+final class BdecoderListTests: XCTestCase {
     
     private let bdecoder = Bdecoder()
     
