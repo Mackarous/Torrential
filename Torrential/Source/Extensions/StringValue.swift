@@ -20,7 +20,9 @@ extension Int {
 
 extension Int64 {
     var byteCountStringValue: String {
-        return ByteCountFormatter().string(fromByteCount: self)
+        let formatter = ByteCountFormatter()
+        formatter.countStyle = .file
+        return formatter.string(fromByteCount: self)
     }
 }
 

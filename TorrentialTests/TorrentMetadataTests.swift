@@ -17,12 +17,14 @@ final class TorrentMetadataTests: XCTestCase {
         let bundle = Bundle(for: TorrentMetadataTests.self)
         let url = bundle.url(forResource: "bunny", withExtension: "torrent")
         XCTAssertNotNil(url)
-        let metadata = reader.loadTorrentMetadata(from: url!)
-        XCTAssertNotNil(metadata)
-        XCTAssertEqual(metadata?.createdBy, "uTorrent/3320")
-        XCTAssertEqual(metadata?.creationDate?.timeIntervalSince1970, 1387309701)
-        XCTAssertEqual(metadata?.info.pieceLength, 524288)
-        XCTAssertEqual(metadata?.info.pieces?.count, 16600)
-//        XCTAssertEqual(<#T##expression1: Equatable##Equatable#>, <#T##expression2: Equatable##Equatable#>)
+        do {
+            let metadata = try reader.loadTorrentMetadata(from: url!)
+            XCTAssertEqual(metadata.createdBy, "uTorrent/3320")
+            XCTAssertEqual(metadata.creationDate?.timeIntervalSince1970, 1387309701)
+            XCTAssertEqual(metadata.info.pieceLength, 524288)
+            XCTAssertEqual(metadata.info.pieces?.count, 16600)
+        } catch {
+            XCTFail("Expected success but received error: \(error)")
+        }
     }
 }
